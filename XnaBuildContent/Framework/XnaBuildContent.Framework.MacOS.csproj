@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6DC4FE71-7E81-4BC7-B9DD-DD6A271682CA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Playroom</RootNamespace>
+    <AssemblyName>XnaBuildContent.Framework</AssemblyName>
+    <ReleaseVersion>1.0</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;MACOS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Externalconsole>True</Externalconsole>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="/bin/bash BuildResources.iOS.sh" workingdir="${ProjectDir}" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Externalconsole>True</Externalconsole>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <DefineConstants>MACOS</DefineConstants>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="/bin/bash BuildResources.iOS.sh" workingdir="${ProjectDir}" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.CSharp" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="Mono.Cairo" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="Xna\" />
+    <Folder Include="Formats\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuildContent.cs" />
+    <Compile Include="BuildContentTool.cs" />
+    <Compile Include="BuildContext.cs" />
+    <Compile Include="CompilerClass.cs" />
+    <Compile Include="IContentCompiler.cs" />
+    <Compile Include="Squish.cs" />
+    <Compile Include="ToolPaths.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Xna\Rectangle.cs" />
+    <Compile Include="Xna\SurfaceFormat.cs" />
+    <Compile Include="Xna\Point.cs" />
+    <Compile Include="BuildTarget.cs" />
+    <Compile Include="PropertyGroup.cs" />
+    <Compile Include="ItemGroup.cs" />
+    <Compile Include="ContentFileException.cs" />
+    <Compile Include="Xna\BitmapContent.cs" />
+    <Compile Include="Rgba.cs" />
+    <Compile Include="Xna\TextureContent.cs" />
+    <Compile Include="Xna\MipmapChain.cs" />
+    <Compile Include="Xna\MipmapChainCollection.cs" />
+    <Compile Include="Xna\ContentReader.cs" />
+    <Compile Include="Xna\ContentWriter.cs" />
+    <Compile Include="ImageFileFormat.cs" />
+    <Compile Include="Xna\Texture2DContent.cs" />
+    <Compile Include="Xna\ContentTypeReader.cs" />
+    <Compile Include="Xna\ContentTypeWriter.cs" />
+    <Compile Include="Xna\TargetPlatform.cs" />
+    <Compile Include="Xna\TypeWriters.cs" />
+    <Compile Include="Xna\AudioContent.cs" />
+    <Compile Include="Xna\AudioFileType.cs" />
+    <Compile Include="Xna\AudioFormat.cs" />
+    <Compile Include="Xna\Vector3.cs" />
+    <Compile Include="Xna\SpriteFontContent.cs" />
+    <Compile Include="Formats\ParsedPathWriter.cs" />
+    <Compile Include="Formats\PinboardFileReaderV1.cs" />
+    <Compile Include="Formats\PinboardFileV1.cs" />
+    <Compile Include="Formats\StringsFileReaderV1.cs" />
+    <Compile Include="Formats\StringsFileV1.cs" />
+    <Compile Include="Formats\XnbFileWriterV5.cs" />
+    <Compile Include="Formats\ContentFileReaderV2.cs" />
+    <Compile Include="Formats\ContentFileV2.cs" />
+    <Compile Include="Formats\SpriteFontFile.cs" />
+    <Compile Include="Formats\SpriteFontFileReader.cs" />
+    <Compile Include="Formats\WavFile.cs" />
+    <Compile Include="Formats\WavFileReader.cs" />
+    <Compile Include="Formats\PngFileReader.cs" />
+    <Compile Include="Formats\PngFile.cs" />
+    <Compile Include="Formats\PinboardFileWriter.cs" />
+    <Compile Include="FrameworkResources.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BuildResources.iOS.sh" />
+    <None Include="FrameworkResources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ToolBelt\ToolBelt\ToolBelt.MacOS.csproj">
+      <Project>{2055D34D-3DF2-444B-937B-32CC1A6E11DF}</Project>
+      <Name>ToolBelt.MacOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Squish2\Squish2\Squish2.MacOS.cproj">
+      <Project>{B9EDFED1-366E-4B0B-9C8A-32AE76B7F402}</Project>
+      <Name>Squish2.MacOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrameworkResources.resources" />
+  </ItemGroup>
+</Project>

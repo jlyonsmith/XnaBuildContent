@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content Version = "2">
+	<ItemGroup>
+		<CompilerAssembly Include="$(BuildContentInstallDir)\Playroom.dll" />
+	</ItemGroup>
+
+	<!-- SpritefontAndStringsToXnbCompiler --> 
+
+	<Target
+		Name="ExampleSpritefontStringsXnb"
+		Inputs="$(InputDir)\Example.spritefont;
+			$(InputDir)\Example.strings"
+		Outputs="$(OutputDir)\$(TargetName).xnb"/>
+</Content>

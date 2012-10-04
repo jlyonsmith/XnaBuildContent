@@ -1,0 +1,3 @@
+#!/bin/bash
+export LD_LIBRARY_PATH=/Library/Frameworks/Mono.framework/Libraries:$LD_LIBRARY_PATH
+mono-sgen ~/bin/BuildContent.app/BuildContent.exe $*

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D9A6DF85-1760-45A1-A26F-598989F58A0B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Playroom</RootNamespace>
+    <AssemblyName>Playroom</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ResourceStringWrapperType>ToolBelt.Message</ResourceStringWrapperType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Playroom.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Playroom.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BitmapContent.cs" />
+    <Compile Include="Compilers\PngToXnbCompiler.cs" />
+    <Compile Include="Compilers\StringsToXnbAndCsCompiler.cs" />
+    <Compile Include="ContentReader.cs" />
+    <Compile Include="Content\ContentTypeWriter.cs" />
+    <Compile Include="BuildContext.cs" />
+    <Compile Include="BuildContentTool.cs" />
+    <Compile Include="BuildItem.cs" />
+    <Compile Include="CompilerClass.cs" />
+    <Compile Include="Content\ContentTypeReader.cs" />
+    <Compile Include="Content\StringsFileReaderV1.cs" />
+    <Compile Include="Content\StringsFileV1.cs" />
+    <Compile Include="Content\XnaTypeWriters.cs" />
+    <Compile Include="Content\XnbFileWriterV5.cs" />
+    <Compile Include="DxtBitmapContent.cs" />
+    <Compile Include="ImageFileFormat.cs" />
+    <Compile Include="MipmapChain.cs" />
+    <Compile Include="MipmapChainCollection.cs" />
+    <Compile Include="PixelBitmapContent.cs" />
+    <Compile Include="Rgba.cs" />
+    <Compile Include="Squish.cs" />
+    <Compile Include="Texture2DContent.cs" />
+    <Compile Include="TextureContent.cs" />
+    <Compile Include="IContentCompiler.cs" />
+    <Compile Include="Compilers\ResxToStringsCompiler.cs" />
+    <Compile Include="Compilers\SpritefontAndResxToXnbCompiler.cs" />
+    <Compile Include="Compilers\SvgToPdfCompiler.cs" />
+    <Compile Include="Compilers\WavToXnbCompiler.cs" />
+    <Compile Include="ContentFileException.cs" />
+    <Compile Include="Content\ContentFileV1.cs" />
+    <Compile Include="ContentWriter.cs" />
+    <Compile Include="PropertyCollectionExtensions.cs" />
+    <Compile Include="ToolPaths.cs" />
+    <Compile Include="Content\ParsedPathWriter.cs" />
+    <Compile Include="Compilers\PinboardToCsCompiler.cs" />
+    <Compile Include="Compilers\PinboardToXnbCompiler.cs" />
+    <Compile Include="Compilers\SvgAndPinboardToXnbCompiler.cs" />
+    <Compile Include="BuildContent.cs" />
+    <Compile Include="Content\PinboardFileV1.cs" />
+    <Compile Include="Content\PinboardFileReaderV1.cs" />
+    <Compile Include="Content\PinboardDataWriter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Content\ContentFileReaderV1.cs" />
+    <None Include="Content\XnaTargetPlatform.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Buckle Include="PlayroomResources.resx">
+      <SubType>Designer</SubType>
+    </Buckle>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ToolBelt\ToolBelt\ToolBelt.csproj">
+      <Project>{52B1B4C0-34D2-4867-AD1F-0EE565F89DC5}</Project>
+      <Name>ToolBelt</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Toaster\Toaster.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

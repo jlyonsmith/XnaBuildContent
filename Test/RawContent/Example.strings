@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Strings>
+	<String Name="String1">String1</String>
+	<String Name="String2">String2{0}</String>
+	<String Name="String3">String3{0}{1}</String>
+</Strings>

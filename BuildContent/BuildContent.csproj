@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{95B09EAB-7C4F-409C-B099-328C0DA3AF80}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BuildContent</RootNamespace>
+    <AssemblyName>BuildContent</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ReleaseVersion>1.0</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Commandlineparameters>~/Projects/XnaBuildContent/Test/RawContent/TestContent.content -rebuild -p:OutputDir=~/Projects/XnaBuildContent/Test/Content</Commandlineparameters>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeExecute" command="/bin/bash CopySquish2.MacOS.sh" workingdir="${ProjectDir}" />
+        <Command type="AfterBuild" command="/bin/bash CopySquish2.MacOS.sh ${ProjectConfigName}" workingdir="${ProjectDir}" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Commandlineparameters>~/Projects/Playroom/Test/RawContent/TestContent.content -rebuild -p:OutputDir=~/Projects/Playroom/Test/Content</Commandlineparameters>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeExecute" />
+        <Command type="AfterBuild" command="/bin/bash CopySquish2.MacOS.sh ${ProjectConfigName}" workingdir="${ProjectDir}" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="CopySquish2.MacOS.sh" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /d $(SolutionDir)\Squish2\$(Configuration)\Squish.dll $(ProjectDir)$(OutDir)</PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XnaBuildContent\Compilers\XnaBuildContent.Compilers.MacOS.csproj">
+      <Project>{A1A3DD3F-2A9E-4753-B9A2-D53CD939F68E}</Project>
+      <Name>XnaBuildContent.Compilers.MacOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XnaBuildContent\Framework\XnaBuildContent.Framework.MacOS.csproj">
+      <Project>{6DC4FE71-7E81-4BC7-B9DD-DD6A271682CA}</Project>
+      <Name>XnaBuildContent.Framework.MacOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ToolBelt\ToolBelt\ToolBelt.MacOS.csproj">
+      <Project>{2055D34D-3DF2-444B-937B-32CC1A6E11DF}</Project>
+      <Name>ToolBelt.MacOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

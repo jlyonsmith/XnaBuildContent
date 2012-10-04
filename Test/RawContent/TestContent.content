@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content Version="2">
+	<ItemGroup>
+		<CompilerAssembly Include="$(BuildContentInstallDir)\XnaBuildContent.Compilers.dll" />
+	</ItemGroup>
+
+	<!-- PinboardToCsCompiler -->
+
+	<Target 
+		Name="ExampleRectangles"
+			Inputs="$(InputDir)\*.pinboard"
+			Outputs="$(OutputDir)\$(TargetName).cs">
+		<PropertyGroup>
+			<Namespace>Company.Product</Namespace>
+		</PropertyGroup>
+	</Target>
+
+	<!-- PinboardToXnbCompiler -->
+
+	<Target
+		Name="ExamplePinboard"
+		Inputs="$(InputDir)\Example.pinboard"
+		Outputs="$(OutputDir)\$(TargetName).xnb">
+	</Target>
+
+	<!-- ResxToStringsCompiler -->
+
+	<Target
+		Name="ExampleResx"
+		Inputs="$(InputDir)\Example.resx"
+			Outputs="$(OutputDir)\$(TargetName).strings">
+	</Target>
+
+	<!-- StringsToXnbAndCsCompiler -->
+
+	<Target
+		Name="ExampleStrings2"
+		Inputs="$(InputDir)\Example.strings"
+		Outputs="$(OutputDir)\$(TargetName).cs;$(OutputDir)\$(TargetName).xnb">
+		<PropertyGroup>
+			<Namespace>Company.Product</Namespace>
+		</PropertyGroup>
+	</Target>
+	
+	<!-- PngToXnbCompiler -->
+	
+	<Target
+		Name="ExamplePng"
+		Inputs="$(InputDir)\Example.png"
+		Outputs="$(OutputDir)\$(TargetName).xnb">
+		<PropertyGroup>
+			<CompressionType>Dxt5</CompressionType>
+		</PropertyGroup>
+	</Target>
+	
+	<!-- SpritefontAndStringsToXnbCompiler --> 
+
+	<Target
+		Name="ExampleSpritefontStringsXnb"
+		Inputs="$(InputDir)\Example.spritefont;
+			$(InputDir)\Example.strings"
+		Outputs="$(OutputDir)\$(TargetName).xnb">
+	<!-- Leave this as having an end element -->
+	</Target>
+	
+	<!-- SvgAndPinboardToXnbCompiler -->
+
+	<Target
+		Name="ExampleSvgPinboardXnb"
+		Inputs="$(InputDir)\Example.svg;$(InputDir)\Example.pinboard"
+		Outputs="$(OutputDir)\$(TargetName).xnb">
+		<PropertyGroup>
+			<Rectangle>Thing</Rectangle>
+		</PropertyGroup>
+	</Target>
+	
+	<!-- SvgToPngCompiler -->
+
+	<Target
+		Name="ExampleSvgPng"
+		Inputs="$(InputDir)\Example.svg"
+		Outputs="$(OutputDir)\$(TargetName).png">
+		<PropertyGroup>
+			<Width>100</Width>
+			<Height>100</Height>
+		</PropertyGroup>
+	</Target>
+	
+	<!-- SvgAndPinboardToPngCompiler -->
+
+	<Target
+		Name="ExampleSvgPinboardPng"
+		Inputs="$(InputDir)\Example.svg;$(InputDir)\Example.pinboard"
+		Outputs="$(OutputDir)\$(TargetName).png">
+		<PropertyGroup>
+			<Rectangles>Thing</Rectangles>
+		</PropertyGroup>
+	</Target>
+	
+	<!-- SvgToPdfAndXnbCompiler -->
+
+	<Target
+		Name="ExampleSvgPdfXnb"
+		Inputs="$(InputDir)\Example.svg"
+		Outputs="$(OutputDir)\$(TargetName).pdf;$(OutputDir)\$(TargetName).xnb">
+		<PropertyGroup>
+			<Pinboard>Example</Pinboard>
+			<Rectangle>Screen</Rectangle>
+		</PropertyGroup>
+	</Target>
+	
+	<!-- WavToXnbCompiler -->
+
+	<Target
+		Name="ExampleWavXnb"
+		Inputs="$(InputDir)\Example.wav"
+		Outputs="$(OutputDir)\$(TargetName).xnb"/>
+	
+</Content>

@@ -1,0 +1,6 @@
+[submodule "Squish2"]
+	path = Squish2
+	url = git@github.com:jlyonsmith/Squish2.git
+[submodule "ToolBelt"]
+	path = ToolBelt
+	url = git@github.com:jlyonsmith/ToolBelt.git

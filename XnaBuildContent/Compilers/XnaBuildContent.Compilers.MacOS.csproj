@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1A3DD3F-2A9E-4753-B9A2-D53CD939F68E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>XnaBuildContent.Compilers</RootNamespace>
+    <AssemblyName>XnaBuildContent.Compilers</AssemblyName>
+    <ReleaseVersion>1.0</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Mono.Cairo" />
+    <Reference Include="Mono.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Framework\XnaBuildContent.Framework.MacOS.csproj">
+      <Project>{6DC4FE71-7E81-4BC7-B9DD-DD6A271682CA}</Project>
+      <Name>XnaBuildContent.Framework.MacOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ToolBelt\ToolBelt\ToolBelt.MacOS.csproj">
+      <Project>{2055D34D-3DF2-444B-937B-32CC1A6E11DF}</Project>
+      <Name>ToolBelt.MacOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ImageTools.cs" />
+    <Compile Include="PinboardFileCache.cs" />
+    <Compile Include="PinboardInventoryToCsCompiler.cs" />
+    <Compile Include="PinboardToXnbCompiler.cs" />
+    <Compile Include="PngToXnbCompiler.cs" />
+    <Compile Include="ResxToStringsCompiler.cs" />
+    <Compile Include="SpritefontAndStringsToXnbCompiler.cs" />
+    <Compile Include="StringsToXnbAndCsCompiler.cs" />
+    <Compile Include="SvgAndPinboardToPngCompiler.cs" />
+    <Compile Include="SvgAndPinboardToXnbCompiler.cs" />
+    <Compile Include="SvgToPdfAndXnbCompiler.cs" />
+    <Compile Include="SvgToPngCompiler.cs" />
+    <Compile Include="WavToXnbCompiler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+</Project>

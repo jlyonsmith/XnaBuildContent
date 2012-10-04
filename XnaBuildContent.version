@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Version>
+  <Major>1</Major>
+  <Minor>0</Minor>
+  <Build>11004</Build>
+  <Revision>0</Revision>
+  <StartYear>2012</StartYear>
+  <Files>
+    <File>BuildContent/Properties/AssemblyInfo.cs</File>
+    <File>XnaBuildContent/Framework/Properties/AssemblyInfo.cs</File>
+    <File>XnaBuildContent/Compilers/Properties/AssemblyInfo.cs</File>
+    <File>Pinboard/Properties/AssemblyInfo.cs</File>
+  </Files>
+</Version>
